@@ -20,4 +20,20 @@ public class CRUDService {
 	public List<test> show() {
 		return crudRepo.findAll();
 	}
+	
+	public test update(test val) {
+		if(crudRepo.existsById(val.getId()))
+			crudRepo.save(val);
+		return val; 
+	}
+	
+	public String delete(Long Id) {
+		if(crudRepo.existsById(Id)) {
+			crudRepo.deleteById(Id); 
+			return "Deleted Successfully!";
+		}
+		else
+			return "Cannot Delete!";
+	}
+	
 }

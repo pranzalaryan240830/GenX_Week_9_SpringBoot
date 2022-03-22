@@ -16,6 +16,7 @@ public class test {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
+	
 	private String Name;
 	private int Age;
 }
